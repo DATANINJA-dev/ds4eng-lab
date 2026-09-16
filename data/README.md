@@ -23,7 +23,7 @@ dataset.
 |---|---|
 | `UDI` | Row identifier |
 | `Product ID` | Product serial, prefixed by variant |
-| `Type` | Quality variant: L (50 %), M (30 %), H (20 %) |
+| `Type` | Quality variant. **In the file: L 6 000 rows (60 %), M 2 997 (30 %), H 1 003 (10 %).** The dataset card says 50 / 30 / 20 % — a second place where the card and the file disagree |
 | `Air temperature [K]` | Ambient temperature, kelvin |
 | `Process temperature [K]` | Process temperature, kelvin |
 | `Rotational speed [rpm]` | Spindle speed |
