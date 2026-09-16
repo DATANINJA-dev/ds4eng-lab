@@ -45,9 +45,8 @@ No class on 28 October or 4 November.
 
 | Minutes | Block |
 |---|---|
-| 0–20 | **The concept** — the idea of the day, with one worked example |
-| 20–100 | **The lab** — guided → semi-guided (in pairs) → open |
-| 100–120 | **The defence** — two or three of you show what you did and justify it |
+| 0–20 | **The idea** — one concept, tied to theory you have already seen, with one worked example |
+| 20–120 | **The lab** — guided → semi-guided (in pairs) → open, no hints. I walk the room and ask |
 
 Every notebook starts from a clean dataset provided here. **You never depend on last
 week's results**, so a bad week never blocks the next one.
