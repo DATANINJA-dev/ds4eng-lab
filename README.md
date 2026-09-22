@@ -25,7 +25,7 @@ Bring your own laptop and be logged into a Google account.
 | # | Date | Session | Notebook |
 |---|------|---------|----------|
 | 1 | 16 Sep | **Survival Python** — from a spreadsheet to a DataFrame | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DATANINJA-dev/ds4eng-lab/blob/main/sessions/s01/s01_survival_python.ipynb) |
-| 2 | 23 Sep | Understanding the problem — EDA and the data dictionary | *soon* |
+| 2 | 23 Sep | **Understanding the problem** — EDA and the data dictionary | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DATANINJA-dev/ds4eng-lab/blob/main/sessions/s02/s02_understanding_the_problem.ipynb) |
 | 3 | 30 Sep | CRISP-DM in a notebook | *soon* |
 | 4 | 07 Oct | Data quality and the anatomy of what is missing | *soon* |
 | 5 | 14 Oct | Imputing without cheating, and outliers | *soon* |
@@ -40,7 +40,7 @@ Bring your own laptop and be logged into a Google account.
 No class on 28 October or 4 November. **Sessions 3 (30 Sep) and 4 (7 Oct) are online.**
 
 Direct link to today's notebook:
-https://colab.research.google.com/github/DATANINJA-dev/ds4eng-lab/blob/main/sessions/s01/s01_survival_python.ipynb
+https://colab.research.google.com/github/DATANINJA-dev/ds4eng-lab/blob/main/sessions/s02/s02_understanding_the_problem.ipynb
 
 Course folder on the UPC Drive (slides, notebook, data):
 https://drive.google.com/drive/folders/1olQg_qW7iPQU0Z1tDLhZpg7Zu9hF4MEm
