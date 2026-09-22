@@ -60,7 +60,7 @@ Used in: **Session 2**, Session 3, Session 5
   Islam Rifat, M. R., & Mehreen, S. (2019). *Deep Neural Network Approach for
   Predicting the Productivity of Garment Employees.* CoDIT 2019, pages 1402-1407.
 
-**Shape:** 1197 rows x 15 columns, no duplicate rows. A garment factory in
+**Shape:** 1197 rows x 15 columns (14 features and the target), no duplicate rows. A garment factory in
 Bangladesh, January to March 2015. One row is one team, on one day, in one
 department.
 
@@ -82,18 +82,24 @@ department.
 | `no_of_workers` | float64 | 0 | Workers on the team. 2 to 89, median 34 |
 | `actual_productivity` | float64 | 0 | Target — what the team delivered, 0 to 1. **37 rows exceed 1.00**, up to 1.12 |
 
-> ⚠️ **Note for instructors.** Four things in this file disagree with its dataset
-> card, and all four are deliberate teaching material in Session 2. The CSV is
+> ⚠️ **Note for instructors.** Three things in this file disagree with its dataset
+> card, and all three are deliberate teaching material in Session 2. The CSV is
 > exactly as distributed by UCI and **nothing has been cleaned**.
 >
-> 1. The card declares **14 features**; the file has **15 columns** (14 plus the
->    target). Same ambiguity as the 6-vs-14 of AI4I in Session 1.
-> 2. The card types `wip`, `idle_time` and `no_of_workers` as **Integer**; in the
+> 1. The card types `wip`, `idle_time` and `no_of_workers` as **Integer**; in the
 >    file all three are `float64`. For `wip` the cause is the gaps.
-> 3. **`wip` is empty in 506 rows, and every one of them is finishing.** Sewing has
+> 2. **`wip` is empty in 506 rows, and every one of them is finishing.** Sewing has
 >    zero gaps. This is not missing data: a finishing line has no work in progress.
 >    It should be read as "not applicable", never filled with a zero.
-> 4. The card says a month is divided into four quarters. The file has five.
+> 3. The card says a month is divided into four quarters. The file has five.
+>
+> **Not a disagreement, although it reads like one:** the card declares
+> `num_features = 14` while the file has 15 columns. It is not a contradiction — the
+> card counts *features*, and its own variable table lists all 15, fourteen with role
+> `Feature` and `actual_productivity` with role `Target`. The same applies to the
+> `num_features = 6` of AI4I 601. Do not use either as an example of a card
+> contradicting its file: the real one in AI4I is that the card writes the first
+> column `UID` and the header says `UDI`.
 >
 > One more, which is not a card disagreement but matters for any comparison between
 > departments: **58 % of sewing rows record `actual_productivity` exactly equal to
