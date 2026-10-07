@@ -102,9 +102,112 @@ department.
 > column `UID` and the header says `UDI`.
 >
 > One more, which is not a card disagreement but matters for any comparison between
-> departments: **58 % of sewing rows record `actual_productivity` exactly equal to
-> `targeted_productivity`** to three decimals, against 0.2 % in finishing. Any
+> departments: **58 % of sewing rows record `actual_productivity` within 0.001 of
+> `targeted_productivity`** (42 % identical to three decimals), against 0.2 % in finishing. Any
 > statement comparing the two departments' hit rates is describing recording
 > practice at least as much as performance.
 >
 > Verified against the file on 22 September 2026. Zip sha256 `446026846b37d738…`.
+
+---
+
+## Absenteeism at work
+
+Used in: Session 3, Part 2 (read directly from UCI)
+
+`Absenteeism_at_work.csv` inside the UCI zip - **740 rows x 21 columns**, separator `;`, no missing values.
+
+A courier company in Brazil, **July 2007 to July 2010**. **Each row is one recorded
+absence** of one employee (not an employee, not a month). There are 36 employees.
+
+The question we use it for: *when someone calls in absent, will it last more than one
+working day?* - long absence = `Absenteeism time in hours` > 8.
+
+### Columns
+
+| Column (exact name) | Type in the file | What it means |
+|---|---|---|
+| `ID` | int64 | Employee number (1-36). Identifies a person, not an absence. |
+| `Reason for absence` | int64 | Why the person was absent, as written on the medical certificate: codes 1-21 are disease chapters of the ICD, 22-28 are other reasons (see the table below). 0 is not documented. |
+| `Month of absence` | int64 | Month of the absence, 1-12. The year is NOT in the file. 0 appears in 3 rows. |
+| `Day of the week` | int64 | 2 = Monday, 3 = Tuesday, 4 = Wednesday, 5 = Thursday, 6 = Friday. |
+| `Seasons` | int64 | Period of the year, 1-4 (see the notes: the names in the source do not match the months). |
+| `Transportation expense` | int64 | Commuting cost for this employee (period and currency not documented). |
+| `Distance from Residence to Work` | int64 | Kilometres from home to work. |
+| `Service time` | int64 | Years working for the company (one value per employee, not updated). |
+| `Age` | int64 | Age in years (one value per employee, not updated). |
+| `'Work load Average/day '` | float64 | Average daily workload of the company that month (units not documented). One value per month, the same for everybody. Note the space at the end of the column name. |
+| `Hit target` | int64 | Target achievement, 81-100 (probably a percentage; not documented). One value per month, the same for everybody. |
+| `Disciplinary failure` | int64 | 1 = this row records a disciplinary failure, 0 = no. |
+| `Education` | int64 | 1 = high school, 2 = graduate, 3 = postgraduate, 4 = master or doctor. |
+| `Son` | int64 | Number of children. |
+| `Social drinker` | int64 | 1 = yes, 0 = no. Health data. |
+| `Social smoker` | int64 | 1 = yes, 0 = no. Health data. |
+| `Pet` | int64 | Number of pets. |
+| `Weight` | int64 | Weight (kg, by its range). Health data. |
+| `Height` | int64 | Height (cm, by its range). Health data. |
+| `Body mass index` | int64 | Weight / height squared (kg/m2), rounded. Health data. |
+| `Absenteeism time in hours` | int64 | How long the absence lasted, in hours. The TARGET. 8 hours = one working day. |
+
+The column `'Work load Average/day '` has a **space at the end of its name**. Typing it
+without the space gives a `KeyError`.
+
+### Reason for absence codes
+
+| Code | Meaning | Rows |
+|---|---|---|
+| 0 | (not documented - see notes) | 43 |
+| 1 | I - Certain infectious and parasitic diseases | 16 |
+| 2 | II - Neoplasms | 1 |
+| 3 | III - Diseases of the blood and immune system | 1 |
+| 4 | IV - Endocrine, nutritional and metabolic diseases | 2 |
+| 5 | V - Mental and behavioural disorders | 3 |
+| 6 | VI - Diseases of the nervous system | 8 |
+| 7 | VII - Diseases of the eye and adnexa | 15 |
+| 8 | VIII - Diseases of the ear and mastoid process | 6 |
+| 9 | IX - Diseases of the circulatory system | 4 |
+| 10 | X - Diseases of the respiratory system | 25 |
+| 11 | XI - Diseases of the digestive system | 26 |
+| 12 | XII - Diseases of the skin and subcutaneous tissue | 8 |
+| 13 | XIII - Diseases of the musculoskeletal system and connective tissue | 55 |
+| 14 | XIV - Diseases of the genitourinary system | 19 |
+| 15 | XV - Pregnancy, childbirth and the puerperium | 2 |
+| 16 | XVI - Certain conditions originating in the perinatal period | 3 |
+| 17 | XVII - Congenital malformations and chromosomal abnormalities | 1 |
+| 18 | XVIII - Symptoms and abnormal findings, not elsewhere classified | 21 |
+| 19 | XIX - Injury, poisoning and other consequences of external causes | 40 |
+| 20 | XX - External causes of morbidity and mortality | 0 |
+| 21 | XXI - Factors influencing health status and contact with health services | 6 |
+| 22 | patient follow-up (no ICD code) | 38 |
+| 23 | medical consultation (no ICD code) | 149 |
+| 24 | blood donation (no ICD code) | 3 |
+| 25 | laboratory examination (no ICD code) | 31 |
+| 26 | unjustified absence (no ICD code) | 33 |
+| 27 | physiotherapy (no ICD code) | 69 |
+| 28 | dental consultation (no ICD code) | 112 |
+
+Codes 1-21 are the chapters of the International Classification of Diseases (ICD, in
+Portuguese "CID"). Codes 22-28 have no ICD code. Code 0 is not documented: in this file
+it appears only on rows with 0 hours that are disciplinary records or the 3 rows with month 0.
+
+### Things in the file worth knowing
+
+- The rows are in **time order** (July 2007 first), but there is no date or year column.
+- There are exact duplicate rows. With no date, two equal rows may be two real absences
+  (for example, physiotherapy every Wednesday in the same month).
+- Every row with `Disciplinary failure` = 1 has 0 hours and reason 0: it is not an absence.
+- The 3 rows with `Month of absence` = 0 are the last 3 rows, with reason 0 and 0 hours.
+- Age, service time, weight and the other personal columns do not change over the three
+  years for an employee: they are a snapshot, not the value on the day of the absence.
+- The source documents call the `Seasons` codes summer (1), autumn (2), winter (3) and
+  spring (4), but code 1 covers June-September, which is winter in Brazil. Treat
+  `Seasons` as four periods of the year, not as season names.
+- Units of `Transportation expense`, `Work load Average/day ` and `Hit target` are not documented.
+
+### Source and licence
+
+Martiniano, A. & Ferreira, R. (2012). Absenteeism at work [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5X882. Licensed under CC BY 4.0. Original study: Martiniano, A., Ferreira, R. P., Sassi, R. J., & Affonso, C. (2012). Application of a neuro fuzzy network in prediction of absenteeism at work. 7th Iberian Conference on Information Systems and Technologies (CISTI), 1-4. IEEE.
+
+Licence **CC BY 4.0** - DOI [10.24432/C5X882](https://doi.org/10.24432/C5X882). Original data from the UCI Machine
+Learning Repository, used unmodified with attribution, as the licence allows.
+Zip sha256 `89ecdfed5f107bb97015c335b1d812d7...`

@@ -26,7 +26,7 @@ Bring your own laptop and be logged into a Google account.
 |---|------|---------|----------|
 | 1 | 16 Sep | **Survival Python** — from a spreadsheet to a DataFrame | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DATANINJA-dev/ds4eng-lab/blob/main/sessions/s01/s01_survival_python.ipynb) |
 | 2 | 23 Sep | **Understanding the problem** — EDA and the data dictionary | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DATANINJA-dev/ds4eng-lab/blob/main/sessions/s02/s02_understanding_the_problem.ipynb) |
-| 3 | 07 Oct | CRISP-DM in a notebook | *soon* |
+| 3 | 07 Oct | **CRISP-DM** · Part 1: in one notebook (Garment) · Part 2: a 2-hour group project (Absenteeism), formative upload | On Atenea → Session 3 |
 | 4-5 | 14 Oct | Data quality, missing values and imputing without cheating | *soon* |
 | 6 | 21 Oct | From 590 columns to 20 — feature selection | *soon* |
 | 7-8 | 11 Nov | PCA and visualising to defend a claim | *soon* |
@@ -53,10 +53,11 @@ https://drive.google.com/drive/folders/1olQg_qW7iPQU0Z1tDLhZpg7Zu9hF4MEm
 | 0–20 | **The idea** — one concept, tied to theory you have already seen, with one worked example |
 | 20–120 | **The lab** — guided → semi-guided (in pairs) → open, no hints. I walk the room and ask |
 
-Every notebook starts from a clean dataset provided here. **You never depend on last
-week's results**, so a bad week never blocks the next one.
+Every notebook starts from a dataset provided here or from a checkpoint you saved in the
+previous session (Session 4-5 starts from your Session 3 checkpoint). **If you lose a
+checkpoint, we give you ours**, so a bad week never blocks the next one.
 
-Stuck on a cell? Every task has a folded answer underneath it. Open it and move on.
+Stuck on a cell? Most tasks have a folded answer underneath them; open tasks say so. Open it and move on.
 
 ---
 
@@ -91,6 +92,8 @@ did you check?*
 | Dataset | Source | Licence |
 |---|---|---|
 | **AI4I 2020 Predictive Maintenance** | [UCI 601](https://doi.org/10.24432/C5HS5C) | CC BY 4.0 |
+| **Productivity Prediction of Garment Employees** | [UCI 597](https://doi.org/10.24432/C51S6D) | CC BY 4.0 |
+| **Absenteeism at work** | [UCI 445](https://doi.org/10.24432/C5X882) | CC BY 4.0 |
 
 Datasets are redistributed here under their original licences, with attribution. See
 [`data/README.md`](data/README.md).
