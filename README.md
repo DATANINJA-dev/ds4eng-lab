@@ -26,20 +26,19 @@ Bring your own laptop and be logged into a Google account.
 |---|------|---------|----------|
 | 1 | 16 Sep | **Survival Python** — from a spreadsheet to a DataFrame | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DATANINJA-dev/ds4eng-lab/blob/main/sessions/s01/s01_survival_python.ipynb) |
 | 2 | 23 Sep | **Understanding the problem** — EDA and the data dictionary | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DATANINJA-dev/ds4eng-lab/blob/main/sessions/s02/s02_understanding_the_problem.ipynb) |
-| 3 | 30 Sep | CRISP-DM in a notebook | *soon* |
-| 4 | 07 Oct | Data quality and the anatomy of what is missing | *soon* |
-| 5 | 14 Oct | Imputing without cheating, and outliers | *soon* |
+| 3 | 07 Oct | CRISP-DM in a notebook | *soon* |
+| 4-5 | 14 Oct | Data quality, missing values and imputing without cheating | *soon* |
 | 6 | 21 Oct | From 590 columns to 20 — feature selection | *soon* |
-| 7 | 11 Nov | PCA and the cost of interpretability | *soon* |
-| 8 | 18 Nov | Visualising to defend a claim · Project 1 workshop | *soon* |
+| 7-8 | 11 Nov | PCA and visualising to defend a claim | *soon* |
+| — | 18 Nov | Project 1 workshop | — |
 | 9 | 25 Nov | The canonical workflow — train/test and honest metrics | *soon* |
 | 10 | 02 Dec | Without labels — clustering and anomalies | *soon* |
 | 11 | 09 Dec | Temporal validation and remaining useful life | *soon* |
 | 12 | 16 Dec | Interpretability, bias and governance | *soon* |
 
-No class on 28 October or 4 November. **Sessions 3 (30 Sep) and 4 (7 Oct) are online.**
+No class on 28 October or 4 November. **Session 3 (7 Oct) was online.**
 
-Direct link to today's notebook:
+Direct link to the latest published notebook (Session 2):
 https://colab.research.google.com/github/DATANINJA-dev/ds4eng-lab/blob/main/sessions/s02/s02_understanding_the_problem.ipynb
 
 Course folder on the UPC Drive (slides, notebook, data):
