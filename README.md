@@ -95,7 +95,7 @@ did you check?*
 | **Productivity Prediction of Garment Employees** | [UCI 597](https://doi.org/10.24432/C51S6D) | CC BY 4.0 |
 | **Absenteeism at work** | [UCI 445](https://doi.org/10.24432/C5X882) | CC BY 4.0 |
 
-Datasets are redistributed here under their original licences, with attribution. See
+Datasets in `data/` are redistributed here under their original licences, with attribution (Absenteeism at work is read straight from UCI and is not in `data/`). See
 [`data/README.md`](data/README.md).
 
 ---
