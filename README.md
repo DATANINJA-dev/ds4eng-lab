@@ -36,7 +36,7 @@ Bring your own laptop and be logged into a Google account.
 | 11 | 09 Dec | Temporal validation and remaining useful life | *soon* |
 | 12 | 16 Dec | Interpretability, bias and governance | *soon* |
 
-No class on 28 October or 4 November. **Session 3 (7 Oct) was online.**
+No class on 28 October or 4 November. **Session 3 (7 Oct) was online, and Session 4-5 (14 Oct) is online too.**
 
 Direct link to the latest published notebook (Session 2):
 https://colab.research.google.com/github/DATANINJA-dev/ds4eng-lab/blob/main/sessions/s02/s02_understanding_the_problem.ipynb
