@@ -50,7 +50,7 @@ The file here is unmodified. `ai4i.parquet` was produced with
 ## Productivity Prediction of Garment Employees
 
 File: `garments_worker_productivity.csv`
-Used in: **Session 2**, Session 3, Session 5
+Used in: **Session 2**, Session 3, Session 4-5
 
 - **Source:** UCI Machine Learning Repository, dataset 597
 - **DOI:** https://doi.org/10.24432/C51S6D
